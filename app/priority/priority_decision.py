@@ -1,4 +1,3 @@
-
 def calculate_priority(task):
     score = 0
 
@@ -41,3 +40,12 @@ def calculate_priority(task):
         score += 10
 
     return score
+
+
+def get_priority_level(score):
+    if score >= 80:
+        return "HIGH"
+    elif score >= 50:
+        return "MEDIUM"
+    else:
+        return "LOW"
