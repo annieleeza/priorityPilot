@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 
 from app.priority.priority_gen import create_task
 from app.priority.priority_decision import (
@@ -9,6 +9,10 @@ from app.priority.priority_decision import (
 
 def create_app():
     app = Flask(__name__)
+
+    @app.route("/")
+    def home():
+        return render_template("index.html")
 
     @app.route("/test", methods=["POST"])
     def test_priority():
